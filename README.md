@@ -13,3 +13,28 @@ This overlay can be used in a [SCCA compliant Network](https://registry.terrafor
 If you want to contribute to this repository, feel free to to contribute to our Terraform module.
 
 More details are available in the [CONTRIBUTING.md](./CONTRIBUTING.md#pull-request-process) file.
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+No providers.
+
+## Modules
+
+No modules.
+
+## Resources
+
+No resources.
+
+## Inputs
+
+No inputs.
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
