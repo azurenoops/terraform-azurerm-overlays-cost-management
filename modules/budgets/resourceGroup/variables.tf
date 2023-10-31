@@ -47,7 +47,7 @@ EOT
   default = null
 }
 
-/* variable "budget_filter" {
+variable "budget_filter" {
   description = <<EOT
 (Optional)  The filter that is used to scope a budget. The filter can be limited to a set of cost centers, resource groups, or resources. Changing this forces a new resource to be created.
 EOT
@@ -56,8 +56,8 @@ EOT
     operator = optional(string)
     values   = list(string)
   }))
-  default = null
-} */
+  default = []
+}
 
 variable "budget_notification" {
   description = "The notification associated with a budget. Budget notification is required in order to create a budget"

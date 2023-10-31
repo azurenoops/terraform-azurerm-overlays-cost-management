@@ -9,7 +9,7 @@ resource "azurerm_consumption_budget_resource_group" "rg_budget" {
   time_grain = var.budget_time_grain
 
   dynamic "time_period" {
-    for_each = var.budget_time_period
+    for_each = var.budget_time_period == null ? [] : [var.budget_time_period]
     content {
       start_date = time_period.value.start_date
       end_date   = time_period.value.end_date
@@ -17,11 +17,14 @@ resource "azurerm_consumption_budget_resource_group" "rg_budget" {
   }
 
   dynamic "filter" {
-    for_each = var.budget_filter != null ? [dimension] : []
+    for_each = var.budget_filter
+
     content {
-      name     = filter.value.name
-      operator = filter.value.operator
-      values   = filter.value.values
+      dimension {
+        name     = filter.value.name
+        operator = filter.value.operator
+        values   = filter.value.values
+      }
     }
   }
 
